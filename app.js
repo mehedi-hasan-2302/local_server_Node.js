@@ -4,7 +4,7 @@ const port = 3000;
 
 const server = http.createServer(function(req, res) {
     if (req.url === '/style.css') {
-        // Serve the CSS file
+       
         fs.readFile('style.css', function(error, data) {
             if (error) {
                 res.writeHead(404);
@@ -16,7 +16,7 @@ const server = http.createServer(function(req, res) {
             res.end();
         });
     } else {
-        // Serve the HTML file
+        
         res.writeHead(200, { 'Content-Type': 'text/html' });
         fs.readFile('index.html', function(error, data) {
             if (error) {
